@@ -180,6 +180,7 @@ namespace CRM_App.Production
                 com.Parameters.Add("@CS_Qty", SqlDbType.VarChar).Value = "-" + Scan_qty.Text.ToString();
                 com.Parameters.Add("@CS_UOM", SqlDbType.VarChar).Value = dt.Rows[0]["CS_UOM"].ToString();
                 com.Parameters.Add("@CS_Issued_By", SqlDbType.VarChar).Value = dbFunctions.username;
+                com.Parameters.Add("@CS_Location", SqlDbType.VarChar).Value = Loc.Text.ToString();
                 com.ExecuteNonQuery();
                 com.Connection.Close();
                 display_Scanned_Details();
@@ -356,6 +357,18 @@ namespace CRM_App.Production
                     {
                         if (dt.Rows[0]["CS_item_iD"].ToString().Equals(IID))
                         {
+                            DataTable db = dbFunctions.getTable("pr_Get_GRN_Barcode_Details '" + txt_Barcode.Text + "'");
+                            if (db.Rows.Count > 0)
+                            {
+                                prtno.Text = db.Rows[0]["CS_Part_Name"].ToString();
+                                prtname.Text = db.Rows[0]["Grade"].ToString();
+                                lotno.Text = db.Rows[0]["GRND_vLot_No"].ToString();
+                                Rcvdate.Text = db.Rows[0]["Rec Date"].ToString();
+                                Expdate.Text = db.Rows[0]["Expdate"].ToString();
+                                Inspdate.Text = db.Rows[0]["Rec Date"].ToString();
+                                Inspname.Text = db.Rows[0]["GRND_vQC_Operator"].ToString();
+                                //oprt.Text = db.Rows[0][""]
+                            }
                             Scan_qty.Text = dt.Rows[0]["CS_Qty"].ToString();
                             Scan_qty.Focus();
 
@@ -538,8 +551,8 @@ namespace CRM_App.Production
                 }
 
 
-                save_data();
-                txt_Barcode.Focus();
+               
+                Loc.Focus();
             }
         }
         public bool isRM = false;
@@ -709,6 +722,16 @@ namespace CRM_App.Production
                     checkBox1.Checked = false;
                 }
             }
+        }
+
+        private void Loc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                save_data();
+                txt_Barcode.Focus();
+            }
+
         }
     }
 }

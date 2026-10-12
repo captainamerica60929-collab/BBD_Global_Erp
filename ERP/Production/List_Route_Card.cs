@@ -30,6 +30,7 @@ namespace CRM_App.Transaction
         private void Purchase_Approval_print_Load(object sender, EventArgs e)
         {
             Inspector.Text = dbFunctions.username;
+            
             PrintDocument prtdoc = new PrintDocument();
             string strDefaultPrinter = prtdoc.PrinterSettings.PrinterName;
 
@@ -56,6 +57,7 @@ namespace CRM_App.Transaction
             loadpalt();
             textBoxX1.TextChanged += FilterData;
             textBoxX4.TextChanged += FilterData;
+            Get_WIP_Pendinglist();
 
         }
         private void FilterData(object sender, EventArgs e)
@@ -329,7 +331,7 @@ namespace CRM_App.Transaction
 
         private void button6_Click(object sender, EventArgs e)
         {
-           // save();
+            save();
             int n = 0;
             try
             {
@@ -347,19 +349,19 @@ namespace CRM_App.Transaction
                 PrinterName = dbFunctions.Printer_Name;// dataClass.printerName.ToString();
             }
             catch { }
-            for (int i = 0; i < n; i++)
-            {
-                string text = System.IO.File.ReadAllText(@"D:\FG_Tag.prn");
+            //for (int i = 0; i < n; i++)
+            //{
+            //    string text = System.IO.File.ReadAllText(@"D:\FG_Tag.prn");
 
-                string ReplaceText = text.Replace("@PartName@", dataGridView1.SelectedRows[0].Cells["Part No"].Value.ToString().Replace("/ " + dataGridView1.SelectedRows[0].Cells["Part No"].Value.ToString(), ""));
-                ReplaceText = ReplaceText.Replace("@PartNo@", dataGridView1.SelectedRows[0].Cells["Part No"].Value.ToString());
-                ReplaceText = ReplaceText.Replace("@Qty@", dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value.ToString());
-                ReplaceText = ReplaceText.Replace("@Barcode@", dataGridView1.SelectedRows[0].Cells["Route Card"].Value.ToString());
-                ReplaceText = ReplaceText.Replace("@Inspector@", Inspector.Text);//dataGridView1.SelectedRows[0].Cells["Inspector"].Value.ToString());
-                ReplaceText = ReplaceText.Replace("@Date@", System.DateTime.Now.ToString("dd-MMM-yyyy"));
+            //    string ReplaceText = text.Replace("@PartName@", dataGridView1.SelectedRows[0].Cells["Part No"].Value.ToString().Replace("/ " + dataGridView1.SelectedRows[0].Cells["Part No"].Value.ToString(), ""));
+            //    ReplaceText = ReplaceText.Replace("@PartNo@", dataGridView1.SelectedRows[0].Cells["Part No"].Value.ToString());
+            //    ReplaceText = ReplaceText.Replace("@Qty@", dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value.ToString());
+            //    ReplaceText = ReplaceText.Replace("@Barcode@", dataGridView1.SelectedRows[0].Cells["Route Card"].Value.ToString());
+            //    ReplaceText = ReplaceText.Replace("@Inspector@", Inspector.Text);//dataGridView1.SelectedRows[0].Cells["Inspector"].Value.ToString());
+            //    ReplaceText = ReplaceText.Replace("@Date@", System.DateTime.Now.ToString("dd-MMM-yyyy"));
 
-                RawPrinterHelper.SendStringToPrinter(PrinterName, ReplaceText);
-            }
+            //    RawPrinterHelper.SendStringToPrinter(PrinterName, ReplaceText);
+            //}
         }
         String ID2 = "0";
         private void save()
@@ -371,18 +373,18 @@ namespace CRM_App.Transaction
 
             //string a2 = dataGridView1.Rows[0].Cells["PDI Ins OK Qty"].Value?.ToString();
             //int a2 = Convert.ToInt32(dataGridView1.Rows[0].Cells["PDI Ins OK Qty"].Value ?? 0);
-            int a2 = Convert.ToInt32(textBoxX3.Text);
+            int a2 = int.Parse(textBoxX3.Text);
 
 
-            int bag = (a2 / a1);
+            // int bag = (a2 / a1);
 
-            int c = bag * a1;
+            // int c = bag * a1;
 
-            int t = c - a2;
+            //  int t = c - a2;
 
 
-            int count = (int)Math.Ceiling((double)a2 / a1);
-
+            //int count = (int)Math.Ceiling((double)a2 / a1);
+            int count = a2;
             for (int i = 1; i <= count; i++)
             {
                 string modifiedRouteCard = $"{a3}-{i}";
@@ -405,8 +407,8 @@ namespace CRM_App.Transaction
                             ID2 = dd.Rows[0][0].ToString();
                         }
 
-                        com.CommandText = "INSERT INTO fg_barcode_details (fg_bar_id,fg_bar_routecard, fg_bar_Barcode, fg_bar_qty, fg_bar_username, fg_bar_date, fg_bar_status) " +
-                       "VALUES (@fg_bar_id,@fg_bar_routecard, @fg_bar_Barcode, @fg_bar_qty, @fg_bar_username, @fg_bar_date, @fg_bar_status)";
+                        com.CommandText = "INSERT INTO fg_barcode_details (fg_bar_id,fg_bar_routecard, fg_bar_Barcode, fg_bar_qty, fg_bar_username, fg_bar_date, fg_bar_status,fg_Routecardid) " +
+                       "VALUES (@fg_bar_id,@fg_bar_routecard, @fg_bar_Barcode, @fg_bar_qty, @fg_bar_username, @fg_bar_date, @fg_bar_status,@fg_Routecardid)";
 
                     }
                     else
@@ -418,9 +420,10 @@ namespace CRM_App.Transaction
                     com.Parameters.Add("@fg_bar_id", SqlDbType.Int).Value = ID2;
                     com.Parameters.Add("@fg_bar_routecard", SqlDbType.VarChar).Value = a3;
                     com.Parameters.Add("@fg_bar_Barcode", SqlDbType.VarChar).Value = modifiedRouteCard;
-                    com.Parameters.Add("@fg_bar_qty", SqlDbType.Int).Value = bagQty;
+                    com.Parameters.Add("@fg_bar_qty", SqlDbType.Int).Value = dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value.ToString();
                     com.Parameters.Add("@fg_bar_username", SqlDbType.VarChar).Value = dbFunctions.username;
                     com.Parameters.Add("@fg_bar_date", SqlDbType.DateTime).Value = dbFunctions.getdate();
+                    com.Parameters.Add("@fg_Routecardid", SqlDbType.Int).Value = int.Parse(Print_Routecard_id);
                     com.Parameters.Add("@fg_bar_status", SqlDbType.VarChar).Value = "A";
 
 
@@ -442,8 +445,8 @@ namespace CRM_App.Transaction
                         ReplaceText = ReplaceText.Replace("@PartNo@", dataGridView1.SelectedRows[0].Cells["Part No"].Value.ToString());
                         //ReplaceText = ReplaceText.Replace("@Qty@", dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value.ToString());
                         //ReplaceText = ReplaceText.Replace("@Qty@", $"{bagQty} / {dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value}");
-                        ReplaceText = ReplaceText.Replace("@Qty@", $"{bagQty}");
-                        ReplaceText = ReplaceText.Replace("@Barcode@", modifiedRouteCard);
+                        ReplaceText = ReplaceText.Replace("@Qty@", dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value.ToString());//$"{bagQty}");
+                    ReplaceText = ReplaceText.Replace("@Barcode@", modifiedRouteCard);
                         ReplaceText = ReplaceText.Replace("@Inspector@", Inspector.Text);//dataGridView1.SelectedRows[0].Cells["Inspector"].Value.ToString());
                         ReplaceText = ReplaceText.Replace("@Date@", System.DateTime.Now.ToString("dd-MMM-yyyy"));
 
@@ -564,9 +567,10 @@ namespace CRM_App.Transaction
             panel2.Controls.Add(ObjInprocess_Inspection_Entry);
             ObjInprocess_Inspection_Entry.Show();
         }
-
+        public string Print_Routecard_id = "";
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            Print_Routecard_id = dataGridView1.SelectedRows[0].Cells["ID"].Value.ToString();
             panel5.Visible = true;
         }
 
@@ -634,6 +638,37 @@ namespace CRM_App.Transaction
             {
                 //MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Get_WIP_Pendinglist();
+        }
+        public void Get_WIP_Completed()
+        {
+            DataTable dt = dbFunctions.getTable("Get_Inspection_Completed_stock");
+            dataGridView2.DataSource = dt;
+            //dbFunctions.DGVStyleAutoSizeColumn(dataGridView1);
+        }
+        public void Get_WIP_Pendinglist()
+        {
+            DataTable dt = dbFunctions.getTable("Get_Pending_WIP_stock");
+            dataGridView2.DataSource = dt;
+           // dbFunctions.DGVStyleAutoSizeColumn(dataGridView1);
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            panel9.Visible = true;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Get_WIP_Completed();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            panel9.Visible = false;
         }
     }
 }

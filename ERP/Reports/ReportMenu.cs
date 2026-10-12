@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using LarchERP.Master;
 using CRM_App.Transaction;
+using CRM_App.Reports;
 
 namespace GenuineHR.Reports
 {
@@ -302,6 +303,17 @@ namespace GenuineHR.Reports
             {
                 BodyPanel.Controls.Clear();
                 GenuineHR.Reports.RM_MATERIAL_RECONCILATION obj = new GenuineHR.Reports.RM_MATERIAL_RECONCILATION();
+                obj.TopLevel = false;
+                obj.Dock = DockStyle.Fill;
+                obj.FormBorderStyle = FormBorderStyle.None;
+                BodyPanel.Controls.Add(obj);
+                obj.Show();
+
+            }
+            if (str.Equals("Traceability"))
+            {
+                BodyPanel.Controls.Clear();
+                Part_Traceability obj = new Part_Traceability();
                 obj.TopLevel = false;
                 obj.Dock = DockStyle.Fill;
                 obj.FormBorderStyle = FormBorderStyle.None;

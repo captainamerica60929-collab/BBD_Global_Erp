@@ -29,7 +29,7 @@ namespace CRM_App.Production
         {
             Load1();
 
-
+            
 
         }
 
@@ -141,7 +141,7 @@ namespace CRM_App.Production
 
         private void insert()
         {
-            SqlConnection con = new SqlConnection(dbFunctions.connectionstring);
+            SqlConnection con = new SqlConnection(dbFunctions.connectionstring);    
             try
             {
                 con.Open();
@@ -815,7 +815,7 @@ namespace CRM_App.Production
                     {
 
                         string A = dt1.Rows[0]["PROD_vBarcodeId"].ToString();
-
+                        panel15.Visible = true;
                         if (A.Equals(aci_vCardNo1.Text, StringComparison.OrdinalIgnoreCase))
                         {
                             txtRCNo.Text = dt1.Rows[0]["PROD_Rej_Qty"].ToString();
@@ -827,6 +827,39 @@ namespace CRM_App.Production
                             txtxplanQty.Text = dt1.Rows[0]["PROD_Sheet_Length"].ToString();
                             txtStartDate.Text = dt1.Rows[0]["PROD_Sheet_Thickness"].ToString();
                             textBox6.Text = dt1.Rows[0]["PROD_nQty"].ToString();
+                            plnqty.Text =dt1.Rows[0]["PROD_Sheet_Length"].ToString();
+                            WIPQTY.Text = dt1.Rows[0]["PROD_nQty"].ToString();
+                            fgprtno.Text = dt1.Rows[0]["PROD_iItemId"].ToString();
+                            fgpartname.Text = dt1.Rows[0]["PROD_vLotNo"].ToString();
+                            DataTable db = dbFunctions.getTable("select * from PROD_Barcode_Details PBD Left join Production_Request PR on PBD.PROD_Routecardid=PR.Pq_iid left join Current_Stock CS on CS.CS_RouteCardNo=PR.Pq_iid where PBD.PROD_Routecardid='" + dt1.Rows[0]["PROD_Routecardid"].ToString() + "'");
+                            if (db.Rows.Count > 0)
+                            {
+                                Routecardno.Text = db.Rows[0]["Pq_Route_Card_No"].ToString();
+                                lotno.Text = db.Rows[0]["CS_Lot_No"].ToString();
+                                Location.Text = db.Rows[0]["CS_Location"].ToString();
+                                issuedate.Text = db.Rows[0]["CS_CreatedDate"].ToString();
+                                rmpartname.Text = db.Rows[0]["CS_Part_No"].ToString();
+                                rmpartno.Text = db.Rows[0]["CS_Part_Name"].ToString();
+                                DataTable machine = dbFunctions.getTable("select MM_Machine_tons from machine_master where MM_MachineCode='" + db.Rows[0]["Pq_Machine_Name"].ToString() + "'");
+                                if (machine.Rows.Count > 0)
+                                {
+                                    Tons.Text = machine.Rows[0]["MM_Machine_tons"].ToString();
+                                }
+                                Machineno.Text = db.Rows[0]["Pq_Machine_Name"].ToString();
+                                //Location.Text = db.Rows[0][""]
+                                object result = db.Compute("SUM(CS_Qty)", string.Empty);
+                                decimal total = (result == DBNull.Value) ? 0 : Math.Abs(Convert.ToDecimal(result));
+
+                                Scan_qty.Text = total.ToString();
+
+                                Scan_qty.Text = total.ToString();
+                                Issuedbrcd.Text =  string.Join(Environment.NewLine,
+    db.AsEnumerable()
+       .Select(r => r["CS_Barcode"].ToString())
+       .Where(s => !string.IsNullOrWhiteSpace(s)));
+
+                            }
+
                             DataTable a = dbFunctions.getTable(" SELECT SUM(CAST(prod_ok AS INT)) AS Total_Prod_OK,SUM(CAST(prod_rej AS INT)) AS Total_Prod_Rej  FROM PROD_Barcode_Details  WHERE PROD_Rej_Qty = '" + txtRCNo.Text + "'  AND prod_qty_status is null");
                             if (a.Rows.Count > 0)
                             {
@@ -1032,6 +1065,11 @@ namespace CRM_App.Production
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Load1();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            panel15.Visible = false;
         }
     }
 }

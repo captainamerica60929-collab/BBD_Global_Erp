@@ -144,6 +144,43 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.button23 = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label44 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.Location = new System.Windows.Forms.TextBox();
+            this.lotno = new System.Windows.Forms.TextBox();
+            this.issuedate = new System.Windows.Forms.TextBox();
+            this.rmpartname = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.fgprtno = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.rmpartno = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.Scan_qty = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.fgpartname = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.Routecardno = new System.Windows.Forms.TextBox();
+            this.plnqty = new System.Windows.Forms.TextBox();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.Machineno = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.Tons = new System.Windows.Forms.TextBox();
+            this.Issuedbrcd = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.WIPQTY = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
@@ -160,12 +197,14 @@
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.panel15);
             this.panel6.Controls.Add(this.label41);
             this.panel6.Controls.Add(this.comboBox1);
             this.panel6.Controls.Add(this.panel14);
@@ -1008,7 +1047,7 @@
             this.lbl_Prod_Qty.AutoSize = true;
             this.lbl_Prod_Qty.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Prod_Qty.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Prod_Qty.Location = new System.Drawing.Point(1216, 7);
+            this.lbl_Prod_Qty.Location = new System.Drawing.Point(1215, 7);
             this.lbl_Prod_Qty.Name = "lbl_Prod_Qty";
             this.lbl_Prod_Qty.Size = new System.Drawing.Size(18, 19);
             this.lbl_Prod_Qty.TabIndex = 288;
@@ -1653,6 +1692,437 @@
             this.label31.TabIndex = 300;
             this.label31.Text = "0";
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.WIPQTY);
+            this.panel15.Controls.Add(this.label55);
+            this.panel15.Controls.Add(this.Issuedbrcd);
+            this.panel15.Controls.Add(this.Tons);
+            this.panel15.Controls.Add(this.label60);
+            this.panel15.Controls.Add(this.Machineno);
+            this.panel15.Controls.Add(this.label59);
+            this.panel15.Controls.Add(this.label58);
+            this.panel15.Controls.Add(this.plnqty);
+            this.panel15.Controls.Add(this.Routecardno);
+            this.panel15.Controls.Add(this.label57);
+            this.panel15.Controls.Add(this.label56);
+            this.panel15.Controls.Add(this.label54);
+            this.panel15.Controls.Add(this.fgpartname);
+            this.panel15.Controls.Add(this.label53);
+            this.panel15.Controls.Add(this.label52);
+            this.panel15.Controls.Add(this.label51);
+            this.panel15.Controls.Add(this.Scan_qty);
+            this.panel15.Controls.Add(this.label50);
+            this.panel15.Controls.Add(this.Location);
+            this.panel15.Controls.Add(this.lotno);
+            this.panel15.Controls.Add(this.issuedate);
+            this.panel15.Controls.Add(this.rmpartname);
+            this.panel15.Controls.Add(this.label42);
+            this.panel15.Controls.Add(this.label43);
+            this.panel15.Controls.Add(this.label45);
+            this.panel15.Controls.Add(this.label46);
+            this.panel15.Controls.Add(this.label47);
+            this.panel15.Controls.Add(this.fgprtno);
+            this.panel15.Controls.Add(this.label48);
+            this.panel15.Controls.Add(this.rmpartno);
+            this.panel15.Controls.Add(this.label49);
+            this.panel15.Controls.Add(this.button23);
+            this.panel15.Controls.Add(this.panel18);
+            this.panel15.Controls.Add(this.label44);
+            this.panel15.Controls.Add(this.panel19);
+            this.panel15.Location = new System.Drawing.Point(220, 43);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(735, 479);
+            this.panel15.TabIndex = 317;
+            this.panel15.Visible = false;
+            // 
+            // button23
+            // 
+            this.button23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button23.FlatAppearance.BorderSize = 0;
+            this.button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
+            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.Location = new System.Drawing.Point(648, 8);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(81, 30);
+            this.button23.TabIndex = 309;
+            this.button23.Text = "Close";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.Firebrick;
+            this.panel18.Location = new System.Drawing.Point(13, 22);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(12, 13);
+            this.panel18.TabIndex = 306;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.Black;
+            this.label44.Location = new System.Drawing.Point(29, 18);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(101, 19);
+            this.label44.TabIndex = 305;
+            this.label44.Text = "Traceability ";
+            // 
+            // panel19
+            // 
+            this.panel19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel19.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel19.Location = new System.Drawing.Point(5, 44);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(724, 2);
+            this.panel19.TabIndex = 304;
+            // 
+            // Location
+            // 
+            this.Location.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Location.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Location.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Location.Location = new System.Drawing.Point(351, 375);
+            this.Location.Name = "Location";
+            this.Location.ReadOnly = true;
+            this.Location.Size = new System.Drawing.Size(129, 26);
+            this.Location.TabIndex = 344;
+            // 
+            // lotno
+            // 
+            this.lotno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lotno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lotno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lotno.Location = new System.Drawing.Point(118, 376);
+            this.lotno.Name = "lotno";
+            this.lotno.ReadOnly = true;
+            this.lotno.Size = new System.Drawing.Size(129, 26);
+            this.lotno.TabIndex = 343;
+            // 
+            // issuedate
+            // 
+            this.issuedate.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.issuedate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.issuedate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issuedate.Location = new System.Drawing.Point(118, 413);
+            this.issuedate.Name = "issuedate";
+            this.issuedate.ReadOnly = true;
+            this.issuedate.Size = new System.Drawing.Size(129, 26);
+            this.issuedate.TabIndex = 342;
+            // 
+            // rmpartname
+            // 
+            this.rmpartname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rmpartname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rmpartname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rmpartname.Location = new System.Drawing.Point(358, 79);
+            this.rmpartname.Name = "rmpartname";
+            this.rmpartname.ReadOnly = true;
+            this.rmpartname.Size = new System.Drawing.Size(187, 26);
+            this.rmpartname.TabIndex = 341;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.ForeColor = System.Drawing.Color.Black;
+            this.label42.Location = new System.Drawing.Point(9, 315);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(128, 19);
+            this.label42.TabIndex = 340;
+            this.label42.Text = "Barcode Issued  :";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.Black;
+            this.label43.Location = new System.Drawing.Point(491, 378);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(82, 19);
+            this.label43.TabIndex = 339;
+            this.label43.Text = "Total Qty  :";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.ForeColor = System.Drawing.Color.Black;
+            this.label45.Location = new System.Drawing.Point(265, 378);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(81, 19);
+            this.label45.TabIndex = 338;
+            this.label45.Text = "Location  :";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.ForeColor = System.Drawing.Color.Black;
+            this.label46.Location = new System.Drawing.Point(22, 413);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(93, 19);
+            this.label46.TabIndex = 337;
+            this.label46.Text = "Issue Date  :";
+            // 
+            // fgprtno
+            // 
+            this.fgprtno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.fgprtno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fgprtno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fgprtno.Location = new System.Drawing.Point(89, 141);
+            this.fgprtno.Name = "fgprtno";
+            this.fgprtno.ReadOnly = true;
+            this.fgprtno.Size = new System.Drawing.Size(153, 26);
+            this.fgprtno.TabIndex = 335;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.ForeColor = System.Drawing.Color.Black;
+            this.label48.Location = new System.Drawing.Point(255, 82);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(94, 19);
+            this.label48.TabIndex = 334;
+            this.label48.Text = "Part Name  :";
+            // 
+            // rmpartno
+            // 
+            this.rmpartno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.rmpartno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rmpartno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rmpartno.Location = new System.Drawing.Point(89, 78);
+            this.rmpartno.Name = "rmpartno";
+            this.rmpartno.ReadOnly = true;
+            this.rmpartno.Size = new System.Drawing.Size(153, 26);
+            this.rmpartno.TabIndex = 333;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.ForeColor = System.Drawing.Color.Black;
+            this.label49.Location = new System.Drawing.Point(9, 81);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(74, 19);
+            this.label49.TabIndex = 332;
+            this.label49.Text = "Part No  :";
+            // 
+            // Scan_qty
+            // 
+            this.Scan_qty.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Scan_qty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Scan_qty.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scan_qty.Location = new System.Drawing.Point(582, 374);
+            this.Scan_qty.Name = "Scan_qty";
+            this.Scan_qty.Size = new System.Drawing.Size(129, 26);
+            this.Scan_qty.TabIndex = 347;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.ForeColor = System.Drawing.Color.Black;
+            this.label50.Location = new System.Drawing.Point(12, 143);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(74, 19);
+            this.label50.TabIndex = 346;
+            this.label50.Text = "Part No  :";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.ForeColor = System.Drawing.Color.Black;
+            this.label51.Location = new System.Drawing.Point(9, 50);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(104, 22);
+            this.label51.TabIndex = 348;
+            this.label51.Text = "RM Details";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.ForeColor = System.Drawing.Color.Black;
+            this.label47.Location = new System.Drawing.Point(47, 378);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(68, 19);
+            this.label47.TabIndex = 336;
+            this.label47.Text = "Lot No  :";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.ForeColor = System.Drawing.Color.Black;
+            this.label52.Location = new System.Drawing.Point(10, 109);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(97, 22);
+            this.label52.TabIndex = 349;
+            this.label52.Text = "FG Details";
+            // 
+            // fgpartname
+            // 
+            this.fgpartname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.fgpartname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fgpartname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fgpartname.Location = new System.Drawing.Point(347, 142);
+            this.fgpartname.Name = "fgpartname";
+            this.fgpartname.ReadOnly = true;
+            this.fgpartname.Size = new System.Drawing.Size(238, 26);
+            this.fgpartname.TabIndex = 351;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.ForeColor = System.Drawing.Color.Black;
+            this.label53.Location = new System.Drawing.Point(247, 145);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(94, 19);
+            this.label53.TabIndex = 350;
+            this.label53.Text = "Part Name  :";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.ForeColor = System.Drawing.Color.Black;
+            this.label54.Location = new System.Drawing.Point(12, 279);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(199, 22);
+            this.label54.TabIndex = 352;
+            this.label54.Text = "Material Issue Details";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.Black;
+            this.label56.Location = new System.Drawing.Point(11, 177);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(151, 22);
+            this.label56.TabIndex = 354;
+            this.label56.Text = "Production Plan";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.ForeColor = System.Drawing.Color.Black;
+            this.label57.Location = new System.Drawing.Point(19, 209);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(121, 19);
+            this.label57.TabIndex = 355;
+            this.label57.Text = "Route card No  :";
+            // 
+            // Routecardno
+            // 
+            this.Routecardno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Routecardno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Routecardno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Routecardno.Location = new System.Drawing.Point(144, 206);
+            this.Routecardno.Name = "Routecardno";
+            this.Routecardno.ReadOnly = true;
+            this.Routecardno.Size = new System.Drawing.Size(153, 26);
+            this.Routecardno.TabIndex = 356;
+            this.Routecardno.Text = " ";
+            // 
+            // plnqty
+            // 
+            this.plnqty.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.plnqty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.plnqty.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plnqty.Location = new System.Drawing.Point(430, 206);
+            this.plnqty.Name = "plnqty";
+            this.plnqty.ReadOnly = true;
+            this.plnqty.Size = new System.Drawing.Size(153, 26);
+            this.plnqty.TabIndex = 357;
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.ForeColor = System.Drawing.Color.Black;
+            this.label58.Location = new System.Drawing.Point(299, 210);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(125, 19);
+            this.label58.TabIndex = 358;
+            this.label58.Text = "Production Qty  :";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.ForeColor = System.Drawing.Color.Black;
+            this.label59.Location = new System.Drawing.Point(11, 244);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(123, 19);
+            this.label59.TabIndex = 359;
+            this.label59.Text = "Machine Name  :";
+            // 
+            // Machineno
+            // 
+            this.Machineno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Machineno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Machineno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Machineno.Location = new System.Drawing.Point(135, 242);
+            this.Machineno.Name = "Machineno";
+            this.Machineno.ReadOnly = true;
+            this.Machineno.Size = new System.Drawing.Size(153, 26);
+            this.Machineno.TabIndex = 360;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.ForeColor = System.Drawing.Color.Black;
+            this.label60.Location = new System.Drawing.Point(293, 244);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(54, 19);
+            this.label60.TabIndex = 361;
+            this.label60.Text = "Tons  :";
+            // 
+            // Tons
+            // 
+            this.Tons.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Tons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Tons.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tons.Location = new System.Drawing.Point(351, 242);
+            this.Tons.Name = "Tons";
+            this.Tons.ReadOnly = true;
+            this.Tons.Size = new System.Drawing.Size(153, 26);
+            this.Tons.TabIndex = 362;
+            // 
+            // Issuedbrcd
+            // 
+            this.Issuedbrcd.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Issuedbrcd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Issuedbrcd.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Issuedbrcd.Location = new System.Drawing.Point(134, 313);
+            this.Issuedbrcd.Multiline = true;
+            this.Issuedbrcd.Name = "Issuedbrcd";
+            this.Issuedbrcd.ReadOnly = true;
+            this.Issuedbrcd.Size = new System.Drawing.Size(532, 57);
+            this.Issuedbrcd.TabIndex = 363;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.ForeColor = System.Drawing.Color.Black;
+            this.label55.Location = new System.Drawing.Point(508, 246);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(77, 19);
+            this.label55.TabIndex = 364;
+            this.label55.Text = "WIP Qty  :";
+            // 
+            // WIPQTY
+            // 
+            this.WIPQTY.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.WIPQTY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WIPQTY.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WIPQTY.Location = new System.Drawing.Point(588, 241);
+            this.WIPQTY.Name = "WIPQTY";
+            this.WIPQTY.ReadOnly = true;
+            this.WIPQTY.Size = new System.Drawing.Size(141, 26);
+            this.WIPQTY.TabIndex = 365;
+            // 
             // Inspected_Production_Data_Entry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1691,6 +2161,8 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1812,5 +2284,42 @@
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TextBox Location;
+        private System.Windows.Forms.TextBox lotno;
+        private System.Windows.Forms.TextBox issuedate;
+        private System.Windows.Forms.TextBox rmpartname;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox fgprtno;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox rmpartno;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox Scan_qty;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox Tons;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox Machineno;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox plnqty;
+        private System.Windows.Forms.TextBox Routecardno;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.TextBox fgpartname;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox Issuedbrcd;
+        private System.Windows.Forms.TextBox WIPQTY;
+        private System.Windows.Forms.Label label55;
     }
 }

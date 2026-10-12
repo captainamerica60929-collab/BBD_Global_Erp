@@ -1232,6 +1232,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Part_Traceability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Part_Traceability.Designer.cs">
+      <DependentUpon>Part_Traceability.cs</DependentUpon>
+    </Compile>
     <Compile Include="VectorIcons.cs" />
     <EmbeddedResource Include="Approvals\Apprval_Menu.resx">
       <DependentUpon>Apprval_Menu.cs</DependentUpon>
@@ -1916,6 +1922,9 @@
     <EmbeddedResource Include="Reports\Assemblyandinvoicereport.resx">
       <DependentUpon>Assemblyandinvoicereport.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Part_Traceability.resx">
+      <DependentUpon>Part_Traceability.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Return_Report.resx">
       <DependentUpon>Return_Report.cs</DependentUpon>

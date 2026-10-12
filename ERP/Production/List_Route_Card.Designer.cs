@@ -37,6 +37,15 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cmbPrinter = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -78,6 +87,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -141,6 +152,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel9);
+            this.panel1.Controls.Add(this.button11);
             this.panel1.Controls.Add(this.textBoxX4);
             this.panel1.Controls.Add(this.cmbPrinter);
             this.panel1.Controls.Add(this.label8);
@@ -172,6 +185,123 @@
             this.panel1.TabIndex = 57;
             this.panel1.UseWaitCursor = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.button14);
+            this.panel9.Controls.Add(this.button13);
+            this.panel9.Controls.Add(this.button12);
+            this.panel9.Controls.Add(this.dataGridView2);
+            this.panel9.Controls.Add(this.panel11);
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.label11);
+            this.panel9.Location = new System.Drawing.Point(135, 73);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(754, 372);
+            this.panel9.TabIndex = 102;
+            this.panel9.UseWaitCursor = true;
+            this.panel9.Visible = false;
+            // 
+            // button14
+            // 
+            this.button14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button14.Image = ((System.Drawing.Image)(resources.GetObject("button14.Image")));
+            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.Location = new System.Drawing.Point(670, 3);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(81, 30);
+            this.button14.TabIndex = 155;
+            this.button14.Text = "Close";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.UseWaitCursor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button13.Location = new System.Drawing.Point(222, 66);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(167, 28);
+            this.button13.TabIndex = 156;
+            this.button13.Text = "Completed WIP Stock";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.UseWaitCursor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.Location = new System.Drawing.Point(84, 66);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(132, 28);
+            this.button12.TabIndex = 155;
+            this.button12.Text = "Hold WIP Stock";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.UseWaitCursor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.ColumnHeadersHeight = 40;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 114);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 35;
+            this.dataGridView2.Size = new System.Drawing.Size(741, 250);
+            this.dataGridView2.TabIndex = 155;
+            this.dataGridView2.UseWaitCursor = true;
+            // 
+            // panel11
+            // 
+            this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel11.Location = new System.Drawing.Point(13, 48);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(726, 2);
+            this.panel11.TabIndex = 2;
+            this.panel11.UseWaitCursor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Firebrick;
+            this.panel10.Location = new System.Drawing.Point(20, 22);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(12, 13);
+            this.panel10.TabIndex = 4;
+            this.panel10.UseWaitCursor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(38, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 19);
+            this.label11.TabIndex = 155;
+            this.label11.Text = "WIP Stock Details";
+            this.label11.UseWaitCursor = true;
+            // 
+            // button11
+            // 
+            this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button11.Location = new System.Drawing.Point(684, 6);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(91, 28);
+            this.button11.TabIndex = 154;
+            this.button11.Text = "View WIP";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.UseWaitCursor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // textBoxX4
             // 
@@ -703,6 +833,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -764,5 +897,14 @@
         private System.Windows.Forms.ComboBox plant;
         private System.Windows.Forms.Label label10;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button14;
     }
 }

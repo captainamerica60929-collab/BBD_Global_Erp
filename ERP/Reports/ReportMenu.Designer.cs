@@ -36,30 +36,31 @@
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("FG Stock");
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Wip_Stock");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("ASS Stock");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Stock Details", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Traceability");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Stock Details", new System.Windows.Forms.TreeNode[] {
             treeNode2,
             treeNode3,
             treeNode4,
             treeNode5,
             treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Inprocess Inspection Details");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Final Inspection");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Assembly Details");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("RootCard Details");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Sales Report");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("OEE REPORT");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Quality Entry");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Production & Idl");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Lable Print");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("JO DC Report");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("posales");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("SAFETY INCIDENT REPORT");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("RM Reconciliation");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Return Report");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Reports", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Inprocess Inspection Details");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Final Inspection");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Assembly Details");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("RootCard Details");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Sales Report");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("OEE REPORT");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Quality Entry");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Production & Idl");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Lable Print");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("JO DC Report");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("posales");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("SAFETY INCIDENT REPORT");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("RM Reconciliation");
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Return Report");
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Reports", new System.Windows.Forms.TreeNode[] {
             treeNode1,
-            treeNode8,
             treeNode9,
             treeNode10,
             treeNode11,
@@ -73,14 +74,15 @@
             treeNode19,
             treeNode20,
             treeNode21,
-            treeNode22});
+            treeNode22,
+            treeNode23});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportMenu));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.BodyPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BodyPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -144,40 +146,42 @@
             treeNode6.Text = "Wip_Stock";
             treeNode7.Name = "ASS Stock";
             treeNode7.Text = "ASS Stock";
-            treeNode8.Name = "Stock Details";
-            treeNode8.Text = "Stock Details";
-            treeNode9.Name = "Inprocess Inspection Details";
-            treeNode9.Text = "Inprocess Inspection Details";
-            treeNode10.Name = "Final Inspection";
-            treeNode10.Text = "Final Inspection";
-            treeNode11.Name = "Assembly Details";
-            treeNode11.Text = "Assembly Details";
-            treeNode12.Name = "RootCard Details";
-            treeNode12.Text = "RootCard Details";
-            treeNode13.Name = "Sales Report";
-            treeNode13.Text = "Sales Report";
-            treeNode14.Name = "OEE REPORT";
-            treeNode14.Text = "OEE REPORT";
-            treeNode15.Name = "Quality Entry";
-            treeNode15.Text = "Quality Entry";
-            treeNode16.Name = "Production & Idl";
-            treeNode16.Text = "Production & Idl";
-            treeNode17.Name = "Lable Print";
-            treeNode17.Text = "Lable Print";
-            treeNode18.Name = "JO DC Report";
-            treeNode18.Text = "JO DC Report";
-            treeNode19.Name = "posales";
-            treeNode19.Text = "posales";
-            treeNode20.Name = "SAFETY INCIDENT REPORT";
-            treeNode20.Text = "SAFETY INCIDENT REPORT";
-            treeNode21.Name = "RM Reconciliation";
-            treeNode21.Text = "RM Reconciliation";
-            treeNode22.Name = "Return Report";
-            treeNode22.Text = "Return Report";
-            treeNode23.Name = "Reports";
-            treeNode23.Text = "Reports";
+            treeNode8.Name = "Traceability";
+            treeNode8.Text = "Traceability";
+            treeNode9.Name = "Stock Details";
+            treeNode9.Text = "Stock Details";
+            treeNode10.Name = "Inprocess Inspection Details";
+            treeNode10.Text = "Inprocess Inspection Details";
+            treeNode11.Name = "Final Inspection";
+            treeNode11.Text = "Final Inspection";
+            treeNode12.Name = "Assembly Details";
+            treeNode12.Text = "Assembly Details";
+            treeNode13.Name = "RootCard Details";
+            treeNode13.Text = "RootCard Details";
+            treeNode14.Name = "Sales Report";
+            treeNode14.Text = "Sales Report";
+            treeNode15.Name = "OEE REPORT";
+            treeNode15.Text = "OEE REPORT";
+            treeNode16.Name = "Quality Entry";
+            treeNode16.Text = "Quality Entry";
+            treeNode17.Name = "Production & Idl";
+            treeNode17.Text = "Production & Idl";
+            treeNode18.Name = "Lable Print";
+            treeNode18.Text = "Lable Print";
+            treeNode19.Name = "JO DC Report";
+            treeNode19.Text = "JO DC Report";
+            treeNode20.Name = "posales";
+            treeNode20.Text = "posales";
+            treeNode21.Name = "SAFETY INCIDENT REPORT";
+            treeNode21.Text = "SAFETY INCIDENT REPORT";
+            treeNode22.Name = "RM Reconciliation";
+            treeNode22.Text = "RM Reconciliation";
+            treeNode23.Name = "Return Report";
+            treeNode23.Text = "Return Report";
+            treeNode24.Name = "Reports";
+            treeNode24.Text = "Reports";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode23});
+            treeNode24});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.ShowPlusMinus = false;
             this.treeView1.ShowRootLines = false;
@@ -193,15 +197,6 @@
             this.imageList1.Images.SetKeyName(0, "RightArrow.png");
             this.imageList1.Images.SetKeyName(1, "DownArro.png");
             // 
-            // BodyPanel
-            // 
-            this.BodyPanel.BackColor = System.Drawing.Color.White;
-            this.BodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BodyPanel.Location = new System.Drawing.Point(0, 0);
-            this.BodyPanel.Name = "BodyPanel";
-            this.BodyPanel.Size = new System.Drawing.Size(665, 537);
-            this.BodyPanel.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
@@ -210,6 +205,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 37);
             this.panel3.TabIndex = 6;
+            // 
+            // BodyPanel
+            // 
+            this.BodyPanel.BackColor = System.Drawing.Color.White;
+            this.BodyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BodyPanel.Location = new System.Drawing.Point(0, 0);
+            this.BodyPanel.Name = "BodyPanel";
+            this.BodyPanel.Size = new System.Drawing.Size(665, 537);
+            this.BodyPanel.TabIndex = 0;
             // 
             // ReportMenu
             // 

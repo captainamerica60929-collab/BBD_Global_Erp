@@ -901,6 +901,7 @@ namespace CRM_App.Production
                         com.Parameters.Add("@PROD_Shift", SqlDbType.VarChar).Value = Shift.Text.ToString();
                         com.Parameters.Add("@PROD_date", SqlDbType.VarChar).Value = PD_Date.Text.ToString();
                         com.Parameters.Add("@prod_produqty", SqlDbType.VarChar).Value = label28.Text.ToString();
+                        com.Parameters.Add("@PROD_Routecardid", SqlDbType.VarChar).Value= dbFunctions.Route_Card_ID;
 
                         com.ExecuteNonQuery();
                         com.Connection.Close();

@@ -82,6 +82,24 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.prtno = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.prtname = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.lotno = new System.Windows.Forms.TextBox();
+            this.Rcvdate = new System.Windows.Forms.TextBox();
+            this.Expdate = new System.Windows.Forms.TextBox();
+            this.Inspdate = new System.Windows.Forms.TextBox();
+            this.Inspname = new System.Windows.Forms.TextBox();
+            this.oprt = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.Loc = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -93,6 +111,24 @@
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.Loc);
+            this.panel6.Controls.Add(this.label22);
+            this.panel6.Controls.Add(this.oprt);
+            this.panel6.Controls.Add(this.Inspname);
+            this.panel6.Controls.Add(this.Inspdate);
+            this.panel6.Controls.Add(this.Expdate);
+            this.panel6.Controls.Add(this.Rcvdate);
+            this.panel6.Controls.Add(this.lotno);
+            this.panel6.Controls.Add(this.label29);
+            this.panel6.Controls.Add(this.label28);
+            this.panel6.Controls.Add(this.label27);
+            this.panel6.Controls.Add(this.label26);
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Controls.Add(this.label24);
+            this.panel6.Controls.Add(this.prtname);
+            this.panel6.Controls.Add(this.label23);
+            this.panel6.Controls.Add(this.prtno);
+            this.panel6.Controls.Add(this.label17);
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.checkBox1);
             this.panel6.Controls.Add(this.plant);
@@ -301,7 +337,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(778, 347);
+            this.button2.Location = new System.Drawing.Point(851, 352);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 32);
             this.button2.TabIndex = 304;
@@ -312,7 +348,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(697, 347);
+            this.button1.Location = new System.Drawing.Point(851, 352);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 32);
             this.button1.TabIndex = 303;
@@ -342,9 +378,9 @@
             this.Scan_qty.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.Scan_qty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Scan_qty.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scan_qty.Location = new System.Drawing.Point(540, 348);
+            this.Scan_qty.Location = new System.Drawing.Point(544, 348);
             this.Scan_qty.Name = "Scan_qty";
-            this.Scan_qty.Size = new System.Drawing.Size(92, 26);
+            this.Scan_qty.Size = new System.Drawing.Size(88, 26);
             this.Scan_qty.TabIndex = 300;
             this.Scan_qty.TextChanged += new System.EventHandler(this.Scan_qty_TextChanged);
             this.Scan_qty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Scan_qty_KeyDown);
@@ -386,7 +422,7 @@
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Location = new System.Drawing.Point(461, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(647, 289);
+            this.groupBox1.Size = new System.Drawing.Size(647, 203);
             this.groupBox1.TabIndex = 293;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pending Production Request";
@@ -394,10 +430,9 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 22);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(641, 264);
+            this.dataGridView2.Size = new System.Drawing.Size(641, 175);
             this.dataGridView2.TabIndex = 292;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
@@ -735,6 +770,197 @@
             this.panel8.Size = new System.Drawing.Size(1102, 2);
             this.panel8.TabIndex = 1;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(460, 244);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 19);
+            this.label17.TabIndex = 316;
+            this.label17.Text = "Part No  :";
+            // 
+            // prtno
+            // 
+            this.prtno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.prtno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prtno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prtno.Location = new System.Drawing.Point(544, 242);
+            this.prtno.Name = "prtno";
+            this.prtno.ReadOnly = true;
+            this.prtno.Size = new System.Drawing.Size(88, 26);
+            this.prtno.TabIndex = 317;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(439, 281);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(94, 19);
+            this.label23.TabIndex = 320;
+            this.label23.Text = "Part Name  :";
+            // 
+            // prtname
+            // 
+            this.prtname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.prtname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prtname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prtname.Location = new System.Drawing.Point(544, 279);
+            this.prtname.Name = "prtname";
+            this.prtname.ReadOnly = true;
+            this.prtname.Size = new System.Drawing.Size(88, 26);
+            this.prtname.TabIndex = 321;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(463, 313);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 19);
+            this.label24.TabIndex = 322;
+            this.label24.Text = "Lot No  :";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(638, 244);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(110, 19);
+            this.label25.TabIndex = 323;
+            this.label25.Text = "Receive Date  :";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(665, 279);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(83, 19);
+            this.label26.TabIndex = 324;
+            this.label26.Text = "Exp Date  :";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(654, 311);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(94, 19);
+            this.label27.TabIndex = 325;
+            this.label27.Text = "Inspc Date  :";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(882, 244);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(102, 19);
+            this.label28.TabIndex = 326;
+            this.label28.Text = "Inspc Name  :";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(894, 318);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(84, 19);
+            this.label29.TabIndex = 327;
+            this.label29.Text = "Operator  :";
+            this.label29.Visible = false;
+            // 
+            // lotno
+            // 
+            this.lotno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lotno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lotno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lotno.Location = new System.Drawing.Point(544, 313);
+            this.lotno.Name = "lotno";
+            this.lotno.ReadOnly = true;
+            this.lotno.Size = new System.Drawing.Size(88, 26);
+            this.lotno.TabIndex = 328;
+            // 
+            // Rcvdate
+            // 
+            this.Rcvdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Rcvdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Rcvdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rcvdate.Location = new System.Drawing.Point(754, 242);
+            this.Rcvdate.Name = "Rcvdate";
+            this.Rcvdate.ReadOnly = true;
+            this.Rcvdate.Size = new System.Drawing.Size(129, 26);
+            this.Rcvdate.TabIndex = 329;
+            // 
+            // Expdate
+            // 
+            this.Expdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Expdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Expdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Expdate.Location = new System.Drawing.Point(754, 277);
+            this.Expdate.Name = "Expdate";
+            this.Expdate.ReadOnly = true;
+            this.Expdate.Size = new System.Drawing.Size(129, 26);
+            this.Expdate.TabIndex = 330;
+            // 
+            // Inspdate
+            // 
+            this.Inspdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Inspdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Inspdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inspdate.Location = new System.Drawing.Point(754, 311);
+            this.Inspdate.Name = "Inspdate";
+            this.Inspdate.ReadOnly = true;
+            this.Inspdate.Size = new System.Drawing.Size(129, 26);
+            this.Inspdate.TabIndex = 331;
+            // 
+            // Inspname
+            // 
+            this.Inspname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Inspname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Inspname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inspname.Location = new System.Drawing.Point(982, 241);
+            this.Inspname.Name = "Inspname";
+            this.Inspname.ReadOnly = true;
+            this.Inspname.Size = new System.Drawing.Size(123, 26);
+            this.Inspname.TabIndex = 332;
+            // 
+            // oprt
+            // 
+            this.oprt.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.oprt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.oprt.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oprt.Location = new System.Drawing.Point(981, 313);
+            this.oprt.Name = "oprt";
+            this.oprt.ReadOnly = true;
+            this.oprt.Size = new System.Drawing.Size(123, 26);
+            this.oprt.TabIndex = 333;
+            this.oprt.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(669, 350);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(85, 19);
+            this.label22.TabIndex = 334;
+            this.label22.Text = "Location   :";
+            // 
+            // Loc
+            // 
+            this.Loc.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Loc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Loc.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loc.Location = new System.Drawing.Point(754, 346);
+            this.Loc.Name = "Loc";
+            this.Loc.Size = new System.Drawing.Size(129, 26);
+            this.Loc.TabIndex = 335;
+            this.Loc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Loc_KeyDown);
+            // 
             // MaterialIssue_Issue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -811,5 +1037,23 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox plant;
+        private System.Windows.Forms.TextBox prtname;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox prtno;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox Loc;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox oprt;
+        private System.Windows.Forms.TextBox Inspname;
+        private System.Windows.Forms.TextBox Inspdate;
+        private System.Windows.Forms.TextBox Expdate;
+        private System.Windows.Forms.TextBox Rcvdate;
+        private System.Windows.Forms.TextBox lotno;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
     }
 }

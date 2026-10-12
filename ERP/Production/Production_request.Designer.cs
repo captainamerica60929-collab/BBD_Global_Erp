@@ -102,6 +102,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Tons = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.MLD_MoldCavity = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -120,8 +122,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.Tons = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1037,6 +1037,27 @@
             this.groupBox1.Text = "Mould Deteail";
             this.groupBox1.Enter += new System.EventHandler(this.GroupBox1_Enter);
             // 
+            // Tons
+            // 
+            this.Tons.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Tons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Tons.Enabled = false;
+            this.Tons.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tons.Location = new System.Drawing.Point(418, 124);
+            this.Tons.Name = "Tons";
+            this.Tons.Size = new System.Drawing.Size(73, 26);
+            this.Tons.TabIndex = 307;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.Color.Black;
+            this.label43.Location = new System.Drawing.Point(368, 126);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(50, 19);
+            this.label43.TabIndex = 306;
+            this.label43.Text = "Tons :";
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1254,27 +1275,6 @@
             this.label28.Size = new System.Drawing.Size(82, 19);
             this.label28.TabIndex = 300;
             this.label28.Text = "Req. Shift :";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.ForeColor = System.Drawing.Color.Black;
-            this.label43.Location = new System.Drawing.Point(368, 126);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(50, 19);
-            this.label43.TabIndex = 306;
-            this.label43.Text = "Tons :";
-            // 
-            // Tons
-            // 
-            this.Tons.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Tons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Tons.Enabled = false;
-            this.Tons.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tons.Location = new System.Drawing.Point(418, 124);
-            this.Tons.Name = "Tons";
-            this.Tons.Size = new System.Drawing.Size(73, 26);
-            this.Tons.TabIndex = 307;
             // 
             // Production_request
             // 
