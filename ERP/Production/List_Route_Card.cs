@@ -331,7 +331,7 @@ namespace CRM_App.Transaction
 
         private void button6_Click(object sender, EventArgs e)
         {
-            save();
+            save2();
             int n = 0;
             try
             {
@@ -384,14 +384,27 @@ namespace CRM_App.Transaction
 
 
             //int count = (int)Math.Ceiling((double)a2 / a1);
-            int count = a2;
-            for (int i = 1; i <= count; i++)
-            {
-                string modifiedRouteCard = $"{a3}-{i}";
-                int bagQty = (i == count) ? (a2 - (a1 * (count - 1))) : a1;
+            //int count = a2;
+            //for (int i = 1; i <= count; i++)
+            //{
+            string modifiedRouteCard;// = $"{a3}-{i}";
+            int nextNo;
 
-                SqlConnection con = new SqlConnection(dbFunctions.connectionstring);
-                try
+           
+            // int bagQty = (i == count) ? (a2 - (a1 * (count - 1))) : a1;
+
+            SqlConnection con = new SqlConnection(dbFunctions.connectionstring);
+            using (SqlCommand cmdNo = new SqlCommand(
+               @"SELECT ISNULL(MAX(TRY_CAST(SUBSTRING(fg_bar_Barcode, LEN(@rc) + 2, 10) AS INT)), 0) + 1
+                  FROM fg_barcode_details WITH (UPDLOCK, HOLDLOCK)
+                  WHERE fg_bar_routecard = @rc
+                    AND fg_bar_Barcode LIKE @rc + '-%'", con))
+            {
+                cmdNo.Parameters.Add("@rc", SqlDbType.VarChar).Value = a3;
+                nextNo = Convert.ToInt32(cmdNo.ExecuteScalar());
+            }
+            modifiedRouteCard = $"{a3}-{nextNo}";
+            try
                 {
                     con.Open();
                     SqlCommand com = new SqlCommand();
@@ -420,7 +433,7 @@ namespace CRM_App.Transaction
                     com.Parameters.Add("@fg_bar_id", SqlDbType.Int).Value = ID2;
                     com.Parameters.Add("@fg_bar_routecard", SqlDbType.VarChar).Value = a3;
                     com.Parameters.Add("@fg_bar_Barcode", SqlDbType.VarChar).Value = modifiedRouteCard;
-                    com.Parameters.Add("@fg_bar_qty", SqlDbType.Int).Value = dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value.ToString();
+                com.Parameters.Add("@fg_bar_qty", SqlDbType.Int).Value = textBoxX3.Text;//dataGridView1.SelectedRows[0].Cells["Pack Qty"].Value.ToString();
                     com.Parameters.Add("@fg_bar_username", SqlDbType.VarChar).Value = dbFunctions.username;
                     com.Parameters.Add("@fg_bar_date", SqlDbType.DateTime).Value = dbFunctions.getdate();
                     com.Parameters.Add("@fg_Routecardid", SqlDbType.Int).Value = int.Parse(Print_Routecard_id);
@@ -461,16 +474,102 @@ namespace CRM_App.Transaction
                 }
                 ID2 = "0";
 
-            }
+            //}
             MessageBox.Show("Details Saved Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
-            //string a3 = dataGridView1.Rows[0].Cells["Route Card"].Value?.ToString();
+           
 
 
         }
 
+        public void save2()
+        {
+            string a3 = dataGridView1.Rows[0].Cells["Route Card"].Value?.ToString();
+            string modifiedRouteCard = null;
+
+            // ---------- 1. DATABASE PART ----------
+            using (SqlConnection con = new SqlConnection(dbFunctions.connectionstring))
+            {
+                con.Open();
+                using (SqlTransaction tran = con.BeginTransaction(IsolationLevel.Serializable))
+                {
+                    try
+                    {
+                        int nextNo;
+                        using (SqlCommand cmdNo = new SqlCommand(
+                            @"SELECT ISNULL(MAX(TRY_CAST(SUBSTRING(fg_bar_Barcode, LEN(@rc) + 2, 10) AS INT)), 0) + 1
+                  FROM fg_barcode_details WITH (UPDLOCK, HOLDLOCK)
+                  WHERE fg_bar_routecard = @rc
+                    AND fg_bar_Barcode LIKE @rc + '-%'", con, tran))
+                        {
+                            cmdNo.Parameters.Add("@rc", SqlDbType.VarChar).Value = a3;
+                            nextNo = Convert.ToInt32(cmdNo.ExecuteScalar());
+                        }
+                        modifiedRouteCard = $"{a3}-{nextNo}";
+
+                        int newId;
+                        using (SqlCommand cmdId = new SqlCommand(
+                            "SELECT ISNULL(MAX(fg_bar_id), 0) + 1 FROM fg_barcode_details WITH (UPDLOCK, HOLDLOCK)", con, tran))
+                        {
+                            newId = Convert.ToInt32(cmdId.ExecuteScalar());
+                        }
+
+                        using (SqlCommand com = new SqlCommand(
+                            @"INSERT INTO fg_barcode_details
+                    (fg_bar_id, fg_bar_routecard, fg_bar_Barcode, fg_bar_qty, fg_bar_username, fg_bar_date, fg_bar_status, fg_Routecardid)
+                  VALUES
+                    (@fg_bar_id, @fg_bar_routecard, @fg_bar_Barcode, @fg_bar_qty, @fg_bar_username, @fg_bar_date, @fg_bar_status, @fg_Routecardid)",
+                            con, tran))
+                        {
+                            com.Parameters.Add("@fg_bar_id", SqlDbType.Int).Value = newId;
+                            com.Parameters.Add("@fg_bar_routecard", SqlDbType.VarChar).Value = a3;
+                            com.Parameters.Add("@fg_bar_Barcode", SqlDbType.VarChar).Value = modifiedRouteCard;
+                            com.Parameters.Add("@fg_bar_qty", SqlDbType.Int).Value = int.Parse(textBoxX3.Text);
+                            com.Parameters.Add("@fg_bar_username", SqlDbType.VarChar).Value = dbFunctions.username;
+                            com.Parameters.Add("@fg_bar_date", SqlDbType.DateTime).Value = dbFunctions.getdate();
+                            com.Parameters.Add("@fg_bar_status", SqlDbType.VarChar).Value = "A";
+                            com.Parameters.Add("@fg_Routecardid", SqlDbType.Int).Value = int.Parse(Print_Routecard_id);
+                            com.ExecuteNonQuery();
+                        }
+
+                        tran.Commit();   // last statement in this try block
+                    }
+                    catch (Exception ex)
+                    {
+                        try { tran.Rollback(); } catch { }   // safe even if already completed
+                        MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;          // don't print if the insert failed
+                    }
+                }
+            }
+
+            // ---------- 2. PRINTING PART (outside the transaction) ----------
+            try
+            {
+                string PrinterName = "";
+                try { PrinterName = dbFunctions.Printer_Name; } catch { }
+
+                string text = System.IO.File.ReadAllText(@"D:\FG_Tag.prn");
+                var row = dataGridView1.SelectedRows[0];
+
+                string ReplaceText = text.Replace("@PartName@",
+                    row.Cells["Part Name"].Value.ToString().Replace("/ " + row.Cells["Part No"].Value.ToString(), ""));
+                ReplaceText = ReplaceText.Replace("@PartNo@", row.Cells["Part No"].Value.ToString());
+                ReplaceText = ReplaceText.Replace("@Qty@", textBoxX3.Text.ToString());//row.Cells["Pack Qty"].Value.ToString());
+                ReplaceText = ReplaceText.Replace("@Barcode@", modifiedRouteCard);
+                ReplaceText = ReplaceText.Replace("@Inspector@", Inspector.Text);
+                ReplaceText = ReplaceText.Replace("@Date@", DateTime.Now.ToString("dd-MMM-yyyy"));
+
+                RawPrinterHelper.SendStringToPrinter(PrinterName, ReplaceText);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Barcode " + modifiedRouteCard + " was saved, but printing failed:\n" + ex.Message,
+                    "Print Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void textBoxX1_TextChanged(object sender, EventArgs e)
         {
             try

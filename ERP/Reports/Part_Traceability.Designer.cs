@@ -124,6 +124,7 @@ namespace CRM_App.Reports
             this.WIPQTY.ReadOnly = true;
             this.WIPQTY.Size = new System.Drawing.Size(141, 26);
             this.WIPQTY.TabIndex = 423;
+            this.WIPQTY.Visible = false;
             // 
             // label55
             // 
@@ -134,6 +135,7 @@ namespace CRM_App.Reports
             this.label55.Size = new System.Drawing.Size(77, 19);
             this.label55.TabIndex = 422;
             this.label55.Text = "WIP Qty  :";
+            this.label55.Visible = false;
             // 
             // Issuedbrcd
             // 
@@ -239,9 +241,9 @@ namespace CRM_App.Reports
             this.label56.ForeColor = System.Drawing.Color.Black;
             this.label56.Location = new System.Drawing.Point(33, 282);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(151, 22);
+            this.label56.Size = new System.Drawing.Size(173, 22);
             this.label56.TabIndex = 412;
-            this.label56.Text = "Production Plan";
+            this.label56.Text = "Production Details";
             // 
             // label54
             // 
@@ -262,7 +264,7 @@ namespace CRM_App.Reports
             this.fgpartname.Location = new System.Drawing.Point(419, 228);
             this.fgpartname.Name = "fgpartname";
             this.fgpartname.ReadOnly = true;
-            this.fgpartname.Size = new System.Drawing.Size(238, 26);
+            this.fgpartname.Size = new System.Drawing.Size(307, 26);
             this.fgpartname.TabIndex = 410;
             // 
             // label53
@@ -358,7 +360,7 @@ namespace CRM_App.Reports
             this.rmpartname.Location = new System.Drawing.Point(417, 148);
             this.rmpartname.Name = "rmpartname";
             this.rmpartname.ReadOnly = true;
-            this.rmpartname.Size = new System.Drawing.Size(237, 26);
+            this.rmpartname.Size = new System.Drawing.Size(309, 26);
             this.rmpartname.TabIndex = 401;
             // 
             // label42

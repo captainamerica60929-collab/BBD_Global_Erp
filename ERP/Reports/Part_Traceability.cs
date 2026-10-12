@@ -124,7 +124,7 @@ db.AsEnumerable()
                 if (dt1.Rows.Count > 0)
                 {
 
-                    DataTable db = dbFunctions.getTable("select * from PROD_Barcode_Details PBD Left join Production_Request PR on PBD.PROD_Routecardid=PR.Pq_iid left join Current_Stock CS on CS.CS_RouteCardNo=PR.Pq_iid where PBD.PROD_Routecardid='" + dt1.Rows[0]["fg_Routecardid"].ToString() + "'");
+                    DataTable db = dbFunctions.getTable("select * from Production_Details PBD Left join Production_Request PR on PBD.PD_Route_Card_ID=PR.Pq_iid left join Current_Stock CS on CS.CS_RouteCardNo=PR.Pq_iid  where PBD.PD_Route_Card_ID='" + dt1.Rows[0]["fg_Routecardid"].ToString() + "'");
                     if (db.Rows.Count > 0)
                     {
                         Routecardno.Text = db.Rows[0]["Pq_Route_Card_No"].ToString();
@@ -133,9 +133,9 @@ db.AsEnumerable()
                         issuedate.Text = db.Rows[0]["CS_CreatedDate"].ToString();
                         rmpartname.Text = db.Rows[0]["CS_Part_No"].ToString();
                         rmpartno.Text = db.Rows[0]["CS_Part_Name"].ToString();
-                        WIPQTY.Text = db.Rows[0]["PROD_nQty"].ToString();
-                        fgprtno.Text = db.Rows[0]["PROD_iItemId"].ToString();
-                        fgpartname.Text = db.Rows[0]["PROD_vLotNo"].ToString();
+                        //WIPQTY.Text = db.Rows[0]["PROD_nQty"].ToString();
+                        fgprtno.Text = db.Rows[0]["Pq_vPart_Name"].ToString();
+                        fgpartname.Text = db.Rows[0]["Pq_vPart_No"].ToString();
                         DataTable machine = dbFunctions.getTable("select MM_Machine_tons from machine_master where MM_MachineCode='" + db.Rows[0]["Pq_Machine_Name"].ToString() + "'");
                         if (machine.Rows.Count > 0)
                         {
@@ -143,6 +143,9 @@ db.AsEnumerable()
                         }
                         Machineno.Text = db.Rows[0]["Pq_Machine_Name"].ToString();
                         //Location.Text = db.Rows[0][""]
+                        object productionqty = db.Compute("SUM(PD_OK_Qty)", string.Empty);
+                        decimal total_prd = (productionqty == DBNull.Value) ? 0 : Math.Abs(Convert.ToDecimal(productionqty));
+                        plnqty.Text = total_prd.ToString();
                         object result = db.Compute("SUM(CS_Qty)", string.Empty);
                         decimal total = (result == DBNull.Value) ? 0 : Math.Abs(Convert.ToDecimal(result));
 
@@ -150,9 +153,10 @@ db.AsEnumerable()
 
                         Scan_qty.Text = total.ToString();
                         Issuedbrcd.Text = string.Join(Environment.NewLine,
-db.AsEnumerable()
-.Select(r => r["CS_Barcode"].ToString())
-.Where(s => !string.IsNullOrWhiteSpace(s)));
+    db.AsEnumerable()
+      .Select(r => r["CS_Barcode"].ToString().Trim())
+      .Where(s => !string.IsNullOrWhiteSpace(s))
+      .Distinct());
 
                     }
 
