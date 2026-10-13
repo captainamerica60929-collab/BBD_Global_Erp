@@ -30,6 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialIssue_Issue));
             this.panel6 = new System.Windows.Forms.Panel();
+            this.Loc = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.oprt = new System.Windows.Forms.TextBox();
+            this.Inspname = new System.Windows.Forms.TextBox();
+            this.Inspdate = new System.Windows.Forms.TextBox();
+            this.Expdate = new System.Windows.Forms.TextBox();
+            this.Rcvdate = new System.Windows.Forms.TextBox();
+            this.lotno = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.prtname = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.prtno = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.plant = new System.Windows.Forms.ComboBox();
@@ -82,24 +100,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.prtno = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.prtname = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.lotno = new System.Windows.Forms.TextBox();
-            this.Rcvdate = new System.Windows.Forms.TextBox();
-            this.Expdate = new System.Windows.Forms.TextBox();
-            this.Inspdate = new System.Windows.Forms.TextBox();
-            this.Inspname = new System.Windows.Forms.TextBox();
-            this.oprt = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.Loc = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -186,6 +186,197 @@
             this.panel6.Size = new System.Drawing.Size(1113, 509);
             this.panel6.TabIndex = 3;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel6_Paint);
+            // 
+            // Loc
+            // 
+            this.Loc.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Loc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Loc.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Loc.Location = new System.Drawing.Point(754, 346);
+            this.Loc.Name = "Loc";
+            this.Loc.Size = new System.Drawing.Size(129, 26);
+            this.Loc.TabIndex = 335;
+            this.Loc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Loc_KeyDown);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(669, 350);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(85, 19);
+            this.label22.TabIndex = 334;
+            this.label22.Text = "Location   :";
+            // 
+            // oprt
+            // 
+            this.oprt.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.oprt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.oprt.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oprt.Location = new System.Drawing.Point(981, 313);
+            this.oprt.Name = "oprt";
+            this.oprt.ReadOnly = true;
+            this.oprt.Size = new System.Drawing.Size(123, 26);
+            this.oprt.TabIndex = 333;
+            this.oprt.Visible = false;
+            // 
+            // Inspname
+            // 
+            this.Inspname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Inspname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Inspname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inspname.Location = new System.Drawing.Point(982, 241);
+            this.Inspname.Name = "Inspname";
+            this.Inspname.ReadOnly = true;
+            this.Inspname.Size = new System.Drawing.Size(123, 26);
+            this.Inspname.TabIndex = 332;
+            // 
+            // Inspdate
+            // 
+            this.Inspdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Inspdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Inspdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Inspdate.Location = new System.Drawing.Point(754, 311);
+            this.Inspdate.Name = "Inspdate";
+            this.Inspdate.ReadOnly = true;
+            this.Inspdate.Size = new System.Drawing.Size(129, 26);
+            this.Inspdate.TabIndex = 331;
+            // 
+            // Expdate
+            // 
+            this.Expdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Expdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Expdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Expdate.Location = new System.Drawing.Point(754, 277);
+            this.Expdate.Name = "Expdate";
+            this.Expdate.ReadOnly = true;
+            this.Expdate.Size = new System.Drawing.Size(129, 26);
+            this.Expdate.TabIndex = 330;
+            // 
+            // Rcvdate
+            // 
+            this.Rcvdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Rcvdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Rcvdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rcvdate.Location = new System.Drawing.Point(754, 242);
+            this.Rcvdate.Name = "Rcvdate";
+            this.Rcvdate.ReadOnly = true;
+            this.Rcvdate.Size = new System.Drawing.Size(129, 26);
+            this.Rcvdate.TabIndex = 329;
+            // 
+            // lotno
+            // 
+            this.lotno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lotno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lotno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lotno.Location = new System.Drawing.Point(544, 313);
+            this.lotno.Name = "lotno";
+            this.lotno.ReadOnly = true;
+            this.lotno.Size = new System.Drawing.Size(88, 26);
+            this.lotno.TabIndex = 328;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(894, 318);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(84, 19);
+            this.label29.TabIndex = 327;
+            this.label29.Text = "Operator  :";
+            this.label29.Visible = false;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(882, 244);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(102, 19);
+            this.label28.TabIndex = 326;
+            this.label28.Text = "Inspc Name  :";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(654, 311);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(94, 19);
+            this.label27.TabIndex = 325;
+            this.label27.Text = "Inspc Date  :";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(665, 279);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(83, 19);
+            this.label26.TabIndex = 324;
+            this.label26.Text = "Exp Date  :";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(638, 244);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(110, 19);
+            this.label25.TabIndex = 323;
+            this.label25.Text = "Receive Date  :";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(463, 313);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 19);
+            this.label24.TabIndex = 322;
+            this.label24.Text = "Lot No  :";
+            // 
+            // prtname
+            // 
+            this.prtname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.prtname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prtname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prtname.Location = new System.Drawing.Point(544, 279);
+            this.prtname.Name = "prtname";
+            this.prtname.ReadOnly = true;
+            this.prtname.Size = new System.Drawing.Size(88, 26);
+            this.prtname.TabIndex = 321;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(439, 281);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(94, 19);
+            this.label23.TabIndex = 320;
+            this.label23.Text = "Part Name  :";
+            // 
+            // prtno
+            // 
+            this.prtno.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.prtno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prtno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prtno.Location = new System.Drawing.Point(544, 242);
+            this.prtno.Name = "prtno";
+            this.prtno.ReadOnly = true;
+            this.prtno.Size = new System.Drawing.Size(88, 26);
+            this.prtno.TabIndex = 317;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(460, 244);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 19);
+            this.label17.TabIndex = 316;
+            this.label17.Text = "Part No  :";
             // 
             // label16
             // 
@@ -372,6 +563,7 @@
             this.txt_Barcode.WatermarkText = "Waiting .....";
             this.txt_Barcode.TextChanged += new System.EventHandler(this.Txt_Barcode_TextChanged);
             this.txt_Barcode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxX1_KeyDown);
+            this.txt_Barcode.ImeModeChanged += new System.EventHandler(this.txt_Barcode_ImeModeChanged);
             // 
             // Scan_qty
             // 
@@ -769,197 +961,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1102, 2);
             this.panel8.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(460, 244);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 19);
-            this.label17.TabIndex = 316;
-            this.label17.Text = "Part No  :";
-            // 
-            // prtno
-            // 
-            this.prtno.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.prtno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.prtno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prtno.Location = new System.Drawing.Point(544, 242);
-            this.prtno.Name = "prtno";
-            this.prtno.ReadOnly = true;
-            this.prtno.Size = new System.Drawing.Size(88, 26);
-            this.prtno.TabIndex = 317;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(439, 281);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(94, 19);
-            this.label23.TabIndex = 320;
-            this.label23.Text = "Part Name  :";
-            // 
-            // prtname
-            // 
-            this.prtname.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.prtname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.prtname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prtname.Location = new System.Drawing.Point(544, 279);
-            this.prtname.Name = "prtname";
-            this.prtname.ReadOnly = true;
-            this.prtname.Size = new System.Drawing.Size(88, 26);
-            this.prtname.TabIndex = 321;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(463, 313);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(68, 19);
-            this.label24.TabIndex = 322;
-            this.label24.Text = "Lot No  :";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(638, 244);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(110, 19);
-            this.label25.TabIndex = 323;
-            this.label25.Text = "Receive Date  :";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(665, 279);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(83, 19);
-            this.label26.TabIndex = 324;
-            this.label26.Text = "Exp Date  :";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(654, 311);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(94, 19);
-            this.label27.TabIndex = 325;
-            this.label27.Text = "Inspc Date  :";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(882, 244);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(102, 19);
-            this.label28.TabIndex = 326;
-            this.label28.Text = "Inspc Name  :";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(894, 318);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(84, 19);
-            this.label29.TabIndex = 327;
-            this.label29.Text = "Operator  :";
-            this.label29.Visible = false;
-            // 
-            // lotno
-            // 
-            this.lotno.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lotno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lotno.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lotno.Location = new System.Drawing.Point(544, 313);
-            this.lotno.Name = "lotno";
-            this.lotno.ReadOnly = true;
-            this.lotno.Size = new System.Drawing.Size(88, 26);
-            this.lotno.TabIndex = 328;
-            // 
-            // Rcvdate
-            // 
-            this.Rcvdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Rcvdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Rcvdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Rcvdate.Location = new System.Drawing.Point(754, 242);
-            this.Rcvdate.Name = "Rcvdate";
-            this.Rcvdate.ReadOnly = true;
-            this.Rcvdate.Size = new System.Drawing.Size(129, 26);
-            this.Rcvdate.TabIndex = 329;
-            // 
-            // Expdate
-            // 
-            this.Expdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Expdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Expdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Expdate.Location = new System.Drawing.Point(754, 277);
-            this.Expdate.Name = "Expdate";
-            this.Expdate.ReadOnly = true;
-            this.Expdate.Size = new System.Drawing.Size(129, 26);
-            this.Expdate.TabIndex = 330;
-            // 
-            // Inspdate
-            // 
-            this.Inspdate.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Inspdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Inspdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inspdate.Location = new System.Drawing.Point(754, 311);
-            this.Inspdate.Name = "Inspdate";
-            this.Inspdate.ReadOnly = true;
-            this.Inspdate.Size = new System.Drawing.Size(129, 26);
-            this.Inspdate.TabIndex = 331;
-            // 
-            // Inspname
-            // 
-            this.Inspname.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Inspname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Inspname.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Inspname.Location = new System.Drawing.Point(982, 241);
-            this.Inspname.Name = "Inspname";
-            this.Inspname.ReadOnly = true;
-            this.Inspname.Size = new System.Drawing.Size(123, 26);
-            this.Inspname.TabIndex = 332;
-            // 
-            // oprt
-            // 
-            this.oprt.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.oprt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.oprt.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oprt.Location = new System.Drawing.Point(981, 313);
-            this.oprt.Name = "oprt";
-            this.oprt.ReadOnly = true;
-            this.oprt.Size = new System.Drawing.Size(123, 26);
-            this.oprt.TabIndex = 333;
-            this.oprt.Visible = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(669, 350);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(85, 19);
-            this.label22.TabIndex = 334;
-            this.label22.Text = "Location   :";
-            // 
-            // Loc
-            // 
-            this.Loc.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Loc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Loc.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Loc.Location = new System.Drawing.Point(754, 346);
-            this.Loc.Name = "Loc";
-            this.Loc.Size = new System.Drawing.Size(129, 26);
-            this.Loc.TabIndex = 335;
-            this.Loc.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Loc_KeyDown);
             // 
             // MaterialIssue_Issue
             // 

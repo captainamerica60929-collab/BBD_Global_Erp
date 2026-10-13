@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Maintanence_Printing_Tool;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace CRM_App.Production
 {
@@ -160,7 +161,7 @@ namespace CRM_App.Production
         void save_data()
         {
 
-            DataTable dt = dbFunctions.getTable("pr_get_Barcode_details_By_ID  '" + txt_Barcode.Text + "' ");
+            DataTable dt = dbFunctions.getTable("pr_get_Barcode_details_By_ID  '" + firstBarcode + "' ");
             SqlConnection con = new SqlConnection(dbFunctions.connectionstring);
             try
             {
@@ -169,7 +170,7 @@ namespace CRM_App.Production
                 com.Connection = con;
                 com.CommandType = CommandType.StoredProcedure;
                 com.CommandText = "Pr_Insert_Current_Stock";
-                com.Parameters.Add("@CS_Barcode", SqlDbType.VarChar).Value = txt_Barcode.Text.ToString();
+                com.Parameters.Add("@CS_Barcode", SqlDbType.VarChar).Value =  firstBarcode.ToString();
                 com.Parameters.Add("@CS_RouteCardNo", SqlDbType.VarChar).Value = Route_Card_ID;
                 com.Parameters.Add("@CS_Type", SqlDbType.VarChar).Value = dt.Rows[0]["CS_Type"].ToString();
                 com.Parameters.Add("@CS_Item_ID", SqlDbType.VarChar).Value = dt.Rows[0]["CS_Item_ID"].ToString();
@@ -227,7 +228,7 @@ namespace CRM_App.Production
                 btnSubmitt.Enabled = false;
             }
         }
-
+        public string firstBarcode = "";
         private void txtxplanQty_TextChanged(object sender, EventArgs e)
         {
            
@@ -277,13 +278,16 @@ namespace CRM_App.Production
                 //        return;
                 //    }
                 //}
-
+                 firstBarcode = txt_Barcode.Text
+    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+    .Select(s => s.Trim())
+    .FirstOrDefault(s => s != "") ?? "";
                 DataTable a = dbFunctions.getTable(@"
                                     SELECT 
                                         SUM(CS_Qty) AS QTY,
                                         MAX(CS_Lot_Date) AS LastDate
                                     FROM current_stock
-                                    WHERE CS_Barcode = '" + txt_Barcode.Text + "'");
+                                    WHERE CS_Barcode = '" + firstBarcode + "'");
 
                 if (a.Rows.Count > 0)
                 {
@@ -313,7 +317,7 @@ namespace CRM_App.Production
                 }
 
 
-                dtFIFO = dbFunctions.getTable("pr_get_Material_Issued_Details_FIFO '" + txt_Barcode.Text.ToString() + "'");
+                dtFIFO = dbFunctions.getTable("pr_get_Material_Issued_Details_FIFO '" + firstBarcode + "'");
                 if(checkBox1.Checked == false)
                 {
                     if (dtFIFO.Rows.Count > 0)   
@@ -348,7 +352,7 @@ namespace CRM_App.Production
                     btnSubmitt.Enabled = false;
                 }
 
-                DataTable dt = dbFunctions.getTable("pr_get_Barcode_Data  '" + txt_Barcode.Text + "'");
+                DataTable dt = dbFunctions.getTable("pr_get_Barcode_Data  '" + firstBarcode + "'");
                 if (dt.Rows.Count > 0)
                 {
                     string IID = cmbRMSpec.SelectedValue.ToString();
@@ -357,7 +361,7 @@ namespace CRM_App.Production
                     {
                         if (dt.Rows[0]["CS_item_iD"].ToString().Equals(IID))
                         {
-                            DataTable db = dbFunctions.getTable("pr_Get_GRN_Barcode_Details '" + txt_Barcode.Text + "'");
+                            DataTable db = dbFunctions.getTable("pr_Get_GRN_Barcode_Details '" + firstBarcode + "'");
                             if (db.Rows.Count > 0)
                             {
                                 prtno.Text = db.Rows[0]["CS_Part_Name"].ToString();
@@ -731,6 +735,11 @@ namespace CRM_App.Production
                 save_data();
                 txt_Barcode.Focus();
             }
+
+        }
+
+        private void txt_Barcode_ImeModeChanged(object sender, EventArgs e)
+        {
 
         }
     }
